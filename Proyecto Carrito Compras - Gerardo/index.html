@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
+    <title>Carrito Compras en JavaScript</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="row align-items-stretch justify-content-between">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                    <a class="navbar-brand" href="#" >Libreria "El Fenix Dorado"</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <img src="img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
+                                    width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"></img>
+                                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                    <table id="lista-carrito" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                    <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                                    <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar Compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 my-4 mx-auto text-center">
+            <h1 class="display-4 mt-4">Lista de Productos</h1>
+            <p class="lead">Escoja entre nuestro gran catalogo de productos y sumerjase al mundo de la lectura</p>
+        </div>
+
+        <div class="container" id="lista-productos">
+            
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Lugares asombrosos</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/hp1.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$<span class="">300 </span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Autor: Luisito Comunica</li>
+                            <li>Editorial: Alfaguara</li>
+                            <li>SKU: 9786073184458</li>
+                            <li>280 paginas</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">La ladrona de la luna</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/acer.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$<span class="">310 </span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Autor: Claudia Ramirez Lomeli</li>
+                            <li>Editorial: Planeta</li>
+                            <li>SKU: 9786070761188</li>
+                            <li>392 páginas</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="2">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">La milla verde</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/lenovo.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$<span class="">300 </span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Autor: Sthepen King</li>
+                            <li>Editorial: De Bolsillo</li>
+                            <li>SKU: 9786073117302</li>
+                            <li>448 páginas</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="3">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Porque a mi</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/apple.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$<span class="">185 </span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Autor: Valeria Piassa Polizzi</li>
+                            <li>Editorial: Loqueleo</li>
+                            <li>SKU: 9786070143229</li>
+                            <li>316 páginas</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Álbum Iscarote</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/huawei.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$<span class="">170 </span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Autor: Julian Herbet</li>
+                            <li>Editorial: Edición Era</li>
+                            <li>SKU: 9786074453164</li>
+                            <li>159 páginas</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Astrofísica para gente con prisa</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/samsung.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$<span class="">220 </span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Autor: Neil Degrasse Tyson</li>
+                            <li>Editorial: Critica</li>
+                            <li>SKU: 9786077474357</li>
+                            <li>216 páginas</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="6">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Cuentos de la tradición méxicana</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/lg.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$<span class="">100 </span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Autor: Sandra Bautista</li>
+                            <li>Editorial: Selector</li>
+                            <li>SKU: 9789706439215</li>
+                            <li>107 páginas</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="7">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Intelrworld</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/advance.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$<span class="">150 </span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Autor: Neil Gaiman</li>
+                            <li>Editorial: Roca editorial de libros/li>
+                            <li>SKU: 9788499185057</li>
+                            <li>240 páginas</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="8">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">La invención de Hugo Cabret</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/dell.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$<span class="">355 </span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Autor: Brian Selznick</li>
+                            <li>Editorial: SM de Ediciones</li>
+                            <li>SKU: 9786074716870</li>
+                            <li>534 páginas</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">The animator survival Kit</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/1.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$<span class="">535 </span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Autor: Richard Williams</li>
+                            <li>Editorial: Faber & Faber</li>
+                            <li>SKU: 9780865478978</li>
+                            <li>382 páginas</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="10">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">El engaño de la princesa</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/2.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$<span class="">295 </span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Autor: Kiersten White</li>
+                            <li>Editorial: Puck/li>
+                            <li>SKU: 9788492918881</li>
+                            <li>352 páginas</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="11">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">El asedio</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/3.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$<span class="">419 </span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Autor: Arturo Perez-Reverte</li>
+                            <li>Editorial: De Bolsillo</li>
+                            <li>SKU: 9786073142113</li>
+                            <li>708 páginas</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="12">Comprar</a>
+                    </div>
+                </div>
+
+
+        </div>
+    </main>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
+
+</body>
+
+</html>
